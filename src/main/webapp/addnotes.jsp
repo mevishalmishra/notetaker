@@ -1,4 +1,11 @@
 <!doctype html>
+<%@page import="com.notetaker.helpers.FactoryProvider"%>
+<%@page import="org.hibernate.Transaction"%>
+<%@page import="org.hibernate.query.Query"%>
+<%@page import="java.util.List"%>
+<%@page import="com.notetaker.entities.*"%>
+<%@page import="com.notetaker.helpers.FactoryProvider"%>
+<%@page import="org.hibernate.Session"%>
 <html lang="en">
 <head>
 <!-- Required meta tags -->
@@ -33,6 +40,29 @@
     name = "note-content" 
     placeholder="Enter the content..."></textarea>
   </div>
+  
+		
+<div class="form-group">
+<label for="author">select author</label>
+
+
+<% Session cs = FactoryProvider.getFactory().getCurrentSession();
+Transaction txt = cs.beginTransaction();
+Query query = cs.createQuery("from Author");
+List<Author> resultList = query.list();
+%>
+
+	<select class="form-control" name="author" id="author">
+<% 
+for(Author author : resultList){
+%>	
+ <option value=<%=author.getAuthorName()  %>><%=author.getAuthorName() %></option>
+<% };txt.commit();cs.close();%>
+
+  </select>
+
+
+</div>
 
   <div class="form-group text-center">
   <button type="submit" class="btn btn-primary">Add</button>

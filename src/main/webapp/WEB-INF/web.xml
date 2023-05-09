@@ -22,6 +22,12 @@
   	<description></description>
   	<servlet-class>com.notetaker.servlets.UpdateServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AddAuthorServlet</servlet-name>
+  	<display-name>AddAuthorServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.notetaker.servlets.AddAuthorServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>addServlet</servlet-name>
   	<url-pattern>/addServlet</url-pattern>
@@ -33,6 +39,10 @@
   <servlet-mapping>
   	<servlet-name>UpdateServlet</servlet-name>
   	<url-pattern>/UpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddAuthorServlet</servlet-name>
+  	<url-pattern>/AddAuthorServlet</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

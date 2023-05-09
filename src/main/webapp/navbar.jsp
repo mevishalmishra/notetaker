@@ -17,6 +17,11 @@
         <li class="nav-item">
         <a class="nav-link" href="allnotes.jsp">Show notes</a>
       </li>
+      
+         <li class="nav-item">
+        <a class="nav-link" href="addauthor.jsp">Add author</a>
+      </li>
+      
       </ul>
   </div>
 </nav>
