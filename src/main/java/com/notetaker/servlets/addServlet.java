@@ -39,12 +39,14 @@ public class addServlet extends HttpServlet {
 		try{
 			String noteTitle = request.getParameter("note-title");
 			String noteContent = request.getParameter("note-content");
+			String authorName = request.getParameter("author");
 		
 			Note note = new Note();
 			note.setNoteId(new Random().nextInt(10000));
 			note.setNoteTitle(noteTitle);
 			note.setNoteContent(noteContent);
 			note.setAddeDate(new Date());
+			note.setAuthorName(authorName);
 			
 			Session session = FactoryProvider.getFactory().getCurrentSession();
 			Transaction txt = session.beginTransaction();

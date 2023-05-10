@@ -26,7 +26,9 @@
 		for(Note note : resultList){
 	%>
 
-	
+	<% String author = note.getAuthorName(); if(author == null){
+		author = "unknown";
+	} %>
 	
 		<div class="container">
 		
@@ -36,6 +38,7 @@
 			<h5 class="card-title"><%= note.getNoteTitle() %></h5>
 			<p class="card-text"><%= note.getNoteContent() %></p>
 			<small class="card-text">Added on <%= note.getAddeDate() %></small><br />
+			<small class="card-text">Author <%=author %> </small><br />
 			<a class="btn btn-danger" href="DeleteServlet?note_id=<%=note.getNoteId()%>">delete</a>
 			<a class="btn btn-warning" href="update.jsp?note_id=<%=note.getNoteId() %>">update</a>
 			
